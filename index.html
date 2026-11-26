@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АвтоПрофи — запись на обслуживание</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="#">Авто<span>Профи</span></a>
+      <nav><a href="#form">Записаться</a><a href="#requests">Заявки</a></nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">ИНФОРМАЦИОННАЯ СИСТЕМА АВТОСЕРВИСА</p>
+      <h1>Запись на обслуживание автомобиля</h1>
+      <p>Оставьте заявку, и сотрудник автосервиса свяжется с вами для подтверждения записи.</p>
+    </section>
+    <section class="panel" id="form">
+      <h2>Новая заявка</h2>
+      <form id="appointmentForm">
+        <div class="grid">
+          <label>Имя клиента<input id="clientName" type="text" placeholder="Например, Иван Петров" required></label>
+          <label>Телефон<input id="phone" type="tel" placeholder="+7 (900) 123-45-67" required></label>
+          <label>Марка автомобиля<input id="carBrand" type="text" placeholder="Например, Toyota" required></label>
+          <label>Модель автомобиля<input id="carModel" type="text" placeholder="Например, Camry" required></label>
+          <label>Государственный номер<input id="carNumber" type="text" placeholder="А123АА 777" required></label>
+          <label>Услуга<select id="service" required>
+            <option value="">Выберите услугу</option>
+            <option>Диагностика автомобиля</option><option>Замена масла</option>
+            <option>Ремонт ходовой части</option><option>Ремонт двигателя</option>
+            <option>Шиномонтаж</option><option>Техническое обслуживание</option>
+          </select></label>
+          <label>Дата посещения<input id="visitDate" type="date" required></label>
+          <label>Желаемое время<input id="visitTime" type="time" required></label>
+        </div>
+        <label>Описание неисправности<textarea id="problem" rows="4" placeholder="Опишите проблему или дополнительные пожелания"></textarea></label>
+        <p id="message" class="message" aria-live="polite"></p>
+        <button type="submit">Отправить заявку</button>
+      </form>
+    </section>
+    <section class="panel" id="requests">
+      <div class="section-heading">
+        <div><p class="eyebrow">УПРАВЛЕНИЕ ЗАПИСЯМИ</p><h2>Список заявок</h2></div>
+        <button id="clearButton" class="secondary" type="button">Очистить список</button>
+      </div>
+      <div id="requestList" class="request-list"><p class="empty">Пока заявок нет.</p></div>
+    </section>
+  </main>
+  <footer><div class="container">АвтоПрофи · Учебный проект информационной системы автосервиса</div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
